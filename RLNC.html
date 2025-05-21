@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RLNC Infographic</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(90deg, #5c00ff, #00c9ff);
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .highlight {
+      color: #00c9ff;
+      font-weight: bold;
+    }
+
+    .section {
+      background: #1a1a1a;
+      border-radius: 16px;
+      margin: 20px 0;
+      padding: 20px;
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .section:hover {
+      transform: scale(1.02);
+    }
+
+    h2 {
+      color: #00f0ff;
+      font-size: 1.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #444;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background: #222;
+      color: #00e0ff;
+    }
+
+    tr:nth-child(even) {
+      background: #2a2a2a;
+    }
+
+    .links {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      background: #00c9ff;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .links a:hover {
+      background: #00a6cc;
+    }
+
+    /* Animation Section Styling */
+    .animation-section {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+
+    .animation-box {
+      width: 45%;
+      text-align: center;
+    }
+
+    .animation-box p {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    svg {
+      width: 100%;
+      height: 150px;
+    }
+
+    .path {
+      stroke: #444;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .packet {
+      r: 8;
+      fill: #00c9ff;
+    }
+
+    /* Delay and Congestion Animation */
+    .packet-delay1 {
+      animation: moveDelay1 4s infinite ease-in-out;
+    }
+
+    .packet-delay2 {
+      animation: moveDelay2 4s infinite ease-in-out;
+      animation-delay: 0.5s;
+    }
+
+    .packet-congestion1 {
+      fill: #ff4444;
+      animation: moveCongestion1 4s infinite ease-in-out;
+    }
+
+    .packet-congestion2 {
+      fill: #ff4444;
+      animation: moveCongestion2 4s infinite ease-in-out;
+      animation-delay: 0.3s;
+    }
+
+    /* Smooth Delivery Animation */
+    .packet-smooth1 {
+      fill: #00ff88;
+      animation: moveSmooth1 3s infinite linear;
+    }
+
+    .packet-smooth2 {
+      fill: #00ff88;
+      animation: moveSmooth2 3s infinite linear;
+      animation-delay: 0.2s;
+    }
+
+    .packet-smooth3 {
+      fill: #00ff88;
+      animation: moveSmooth3 3s infinite linear;
+      animation-delay: 0.4s;
+    }
+
+    @keyframes moveDelay1 {
+      0% { offset-distance: 0%; }
+      50% { offset-distance: 50%; fill: #00c9ff; }
+      60% { offset-distance: 50%; fill: #ff4444; }
+      100% { offset-distance: 100%; fill: #ff4444; }
+    }
+
+    @keyframes moveDelay2 {
+      0% { offset-distance: 0%; }
+      40% { offset-distance: 40%; fill: #00c9ff; }
+      50% { offset-distance: 40%; fill: #ff4444; }
+      100% { offset-distance: 100%; fill: #ff4444; }
+    }
+
+    @keyframes moveCongestion1 {
+      0% { offset-distance: 0%; }
+      70% { offset-distance: 70%; }
+      80% { offset-distance: 70%; }
+      100% { offset-distance: 100%; }
+    }
+
+    @keyframes moveCongestion2 {
+      0% { offset-distance: 0%; }
+      65% { offset-distance: 65%; }
+      85% { offset-distance: 65%; }
+      100% { offset-distance: 100%; }
+    }
+
+    @keyframes moveSmooth1 {
+      0% { offset-distance: 0%; }
+      100% { offset-distance: 100%; }
+    }
+
+    @keyframes moveSmooth2 {
+      0% { offset-distance: 0%; }
+      100% { offset-distance: 100%; }
+    }
+
+    @keyframes moveSmooth3 {
+      0% { offset-distance: 0%; }
+      100% { offset-distance: 100%; }
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      table, thead, tbody, th, td, tr {
+        font-size: 14px;
+      }
+
+      .animation-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .animation-box {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Advantages of RLNC (Random Linear Network Coding)</h1>
+</header>
+
+<div class="container">
+
+  <div class="section">
+    <h2>1. What is RLNC?</h2>
+    <p>
+      RLNC allows intermediate nodes in a network to not just forward data, but to <span class="highlight">recode</span> it. This ensures resilience to losses and high scalability in <span class="highlight">decentralized</span> networks.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>2. Comparison of Codes: RLNC vs RS vs Fountain</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Scalability Support</th>
+          <th>Recoding</th>
+          <th>Complexity</th>
+          <th>Use Cases</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Reed-Solomon</td>
+          <td>✘ (drops with more nodes)</td>
+          <td>✘</td>
+          <td>High</td>
+          <td>Storage, QR</td>
+        </tr>
+        <tr>
+          <td>Fountain Codes</td>
+          <td>✘</td>
+          <td>✘</td>
+          <td>Medium</td>
+          <td>IPTV, Streaming</td>
+        </tr>
+        <tr>
+          <td><strong>RLNC</strong></td>
+          <td><strong>✔ (constant throughput)</strong></td>
+          <td><strong>✔</strong></td>
+          <td>Low (distributed)</td>
+          <td><strong>Mesh, IoT, 5G</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>3. Visualizing RLNC Benefits</h2>
+    <div class="animation-section">
+      <div class="animation-box">
+        <p>Delays and Congestion</p>
+        <svg>
+          <path id="path1" class="path" d="M10,120 Q150,20 290,120" />
+          <path id="path2" class="path" d="M10,80 Q150,180 290,80" />
+          <circle class="packet packet-delay1" style="offset-path: path('M10,120 Q150,20 290,120');" />
+          <circle class="packet packet-delay2" style="offset-path: path('M10,80 Q150,180 290,80');" />
+          <circle class="packet packet-congestion1" style="offset-path: path('M10,120 Q150,20 290,120');" />
+          <circle class="packet packet-congestion2" style="offset-path: path('M10,80 Q150,180 290,80');" />
+        </svg>
+      </div>
+      <div class="animation-box">
+        <p>Streamlined at the Destination</p>
+        <svg>
+          <path id="path3" class="path" d="M10,100 Q150,50 290,100" />
+          <path id="path4" class="path" d="M10,100 Q150,150 290,100" />
+          <circle class="packet packet-smooth1" style="offset-path: path('M10,100 Q150,50 290,100');" />
+          <circle class="packet packet-smooth2" style="offset-path: path('M10,100 Q150,150 290,100');" />
+          <circle class="packet packet-smooth3" style="offset-path: path('M10,100 Q150,50 290,100');" />
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>4. Why It Matters</h2>
+    <p>
+      Unlike other approaches, <strong>RLNC scales without losses</strong>, even as the number of hops increases. It ensures <span class="highlight">maximum network utilization</span>, minimizes delays, and eliminates congestion.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>5. Adaptability of RLNC</h2>
+    <p>
+      Suitable for <strong>dynamic networks</strong>: mesh networks, decentralized applications, and intermittent connections. No synchronization is required — coding and recoding happen locally and independently.
+    </p>
+  </div>
+
+  <div class="links">
+    <a href="https://x.com/get_optimum" target="_blank">Twitter</a>
+    <a href="https://discord.gg/getoptimum" target="_blank">Discord</a>
+    <a href="https://docs.getoptimum.xyz/" target="_blank">Documentation</a>
+  </div>
+
+</div>
+
+</body>
+</html>
